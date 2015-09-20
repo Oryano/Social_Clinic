@@ -1,0 +1,179 @@
+
+<style type="text/css">
+
+body{
+
+    font-family: Monaco, "Lucida Console", monospace;
+}
+
+
+#Q1{
+display: block;
+}
+
+#Q2, #Q3, #Q4, #Q5, #Q6, #Q7, #seeResults{
+    display: none;
+}
+
+.slider{
+    width: 100%;
+    margin-bottom: 4%;
+}
+
+.left{
+    float: left;
+    font-family: Monaco, "Lucida Console", monospace;
+    color: rgb(144, 144, 144);
+}
+.right{
+    float: right;
+    font-family: Monaco, "Lucida Console", monospace;
+    color: rgb(144, 144, 144);
+}
+
+#notificPic{
+margin: auto;
+width: 30%;
+}
+
+h2{
+font-family: Monaco, "Lucida Console", monospace;
+    padding: 20px 0;
+    font-weight: 300;
+    color: #333;
+    margin: -16px -16px 16px -16px;
+}
+
+
+#pageRight {
+    color: red;
+    font-size: 20px;
+    clear: both;
+    width: 500px;
+    margin-left: 600px;
+    display:inline-block;
+    margin-top: 50px;
+    font-weight: 500;
+}
+
+#pageRight h5{
+    color: #000000;
+
+}
+/*#pageRight #cure{
+    color: red;
+    font-weight: 500;s
+    margin-left: 600px;
+    width: 400px;
+}*/
+
+#pageLeft{
+    clear: both;
+    width: 400px;
+    margin-left: 600px;
+    display:inline-block;
+}
+input[type=checkbox]:checked + label{
+
+}
+
+.app{
+    display:inline-block;
+    margin: 50px;
+}
+
+.form-style-6{
+    font: 250%;
+    margin: 10px auto;
+    padding: 16px;
+    
+}
+.form-style-6 h1{
+    font-family: Monaco, "Lucida Console", monospace;
+    padding: 20px 0;
+    font-size: 250%;
+    font-weight: 300;
+    color: #333;
+    margin: -16px -16px 16px -16px;
+}
+.form-style-6 input[type="text"],
+.form-style-6 input[type="date"],
+.form-style-6 input[type="datetime"],
+.form-style-6 input[type="email"],
+.form-style-6 input[type="number"],
+.form-style-6 input[type="search"],
+.form-style-6 input[type="time"],
+.form-style-6 input[type="url"],
+.form-style-6 textarea,
+.form-style-6 select 
+{
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 4%;
+    border: 1px solid #ccc;
+    padding: 3%;
+    color: #555;
+    font: 250% Monaco, "Lucida Console", monospace;
+}
+.form-style-6 input[type="text"]:focus,
+.form-style-6 input[type="date"]:focus,
+.form-style-6 input[type="datetime"]:focus,
+.form-style-6 input[type="email"]:focus,
+.form-style-6 input[type="number"]:focus,
+.form-style-6 input[type="search"]:focus,
+.form-style-6 input[type="time"]:focus,
+.form-style-6 input[type="url"]:focus,
+.form-style-6 textarea:focus,
+.form-style-6 select:focus
+{
+    box-shadow: 0 0 5px #43D1AF;
+    padding: 3%;
+    border: 1px solid #43D1AF;
+}
+
+.form-style-6 input[type="button"],
+.form-style-6 input[type="submit"]{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 1%;
+    background: #00C1CC;
+    border-bottom: 2px solid #00C1CC;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;    
+    color: #fff;
+    font-size: 300%;
+}
+.form-style-6 input[type="button"]:hover,
+.form-style-6 input[type="submit"]:hover{
+    background: rgba(232, 126, 120, 0.66);
+    border-bottom: 2px rgba(232, 126, 120, 0.66);
+}
+
+/*#sub{
+    background: url("img/Home-Button.png") no-repeat;
+    margin-left: 550px;
+    margin-top: 350px;
+}*/
+
+#sub{
+    margin-top: 350px;
+}
+
+#homebtn{
+    margin-top: 80px;
+}
+
+
+
+</style>

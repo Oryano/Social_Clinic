@@ -1,0 +1,223 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Social Clinic Diagnosis</title>
+		<link rel="stylesheet" type="text/css" href="styles_oryan.css">
+		<!--
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		  -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="scripts_oryan.js"></script>
+
+		<!--for faceray-->
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+          <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+          <script src="js/scripts.js"></script>
+          <script src="js/clmtrackr.js"></script>
+          <script src="models/model_pca_20_svm_emotionDetection.js"></script>
+          <script src="js/emotion_classifier.js"></script>
+          <script src="js/emotionmodel.js"></script>
+          <script src="models/model_pca_20_svm.js"></script>
+          <script src="js/p5.js"></script>
+          <script src="js/p5.dom.js"></script>
+          <script type="text/javascript" src="webcam.js"></script>
+
+
+	</head>
+
+
+	<body>
+
+		<div class="form-style-6" id = 'Q1'>
+		<h1>YOUR NAME?</h1>
+			
+			<input type="text" name="field1" id="yourname" placeholder="Type here.." />
+			<input type="button" onclick="hideQ1()" value = 'NEXT'/>
+			<!-- <input type="submit" value="NEXT" onsubmit="fromQ1()" /> -->
+			
+		</div>
+
+
+
+		<div class="form-style-6" id = 'Q2'> 
+
+			<h1>Click on the apps you frequently use</h1>
+			
+				<div class = 'app'> 
+					<input type="checkbox" name="apps" id = 'snap' value = 'SnapChat'/> 
+					<label for="snap"><img src="app-icons/128px-Snapchat-icon.png" alt="snapchat" height="128" width="128"> </label>
+				</div>
+
+				<div class = 'app'> 
+						<input type="checkbox" name="apps" id = 'WeCh' value = 'WeChat'/>
+						<label for="WeCh"><img src="app-icons/128px-WeChat-icon.png" alt="WeChat" height="128" width="128"> </label>
+			    </div>
+			    <div class = 'app'> 
+					<input type="checkbox" name="apps" id = 'Tumb' value = 'Tumblr'/>
+					<label for="Tumb"><img src="app-icons/128px-Tumblr-icon.png" alt="Tumblr" height="128" width="128"> </label>
+				</div>
+				<div class = 'app'> 
+					<input type="checkbox" name="apps" id ='FB' value = 'Facebook/messenger'/>
+					<label for="FB"><img src="app-icons/128px-Facebook-icon.png" alt="Facebook" height="128" width="128"> </label>
+				</div>
+				<div class = 'app'> 
+					<input type="checkbox" name="apps" id = 'WtsApp' value = 'WhatsApp'/> 
+					<label for="WtsApp"><img src="app-icons/128px-WhatsApp-icon.png" alt="WhatsApp" height="128" width="128"> </label>
+				</div>
+				<div class = 'app'> 
+					<input type="checkbox" name="apps" id = 'twit' value = 'Twitter'/>
+					<label for="twit"><img src="app-icons/128px-Twitter-icon.png" alt="Twitter" height="128" width="128"> </label>
+				</div>
+				<div class = 'app'> 
+					<input type="checkbox" name="apps" id = 'Insta' value = 'Instagram'/>
+					<label for="Insta"><img src="app-icons/128px-Instagram-icon.png" alt="Instagram" height="128" width="128"> </label>
+				</div>
+				<div class = 'app'> 
+					<input type="checkbox" name="apps" id = 'forsq' value = 'Foursquare'/>
+					<label for="forsq"><img src="app-icons/128px-Foursquare-icon.png" alt="Twitter" height="128" width="128"> </label>				
+				</div>
+				<div class = 'app'> 
+					<input type="checkbox" name="apps" id = 'Goog' value = 'Google+'/>
+					<label for="Goog"><img src="app-icons/128px-Google+-icon.png" alt="Google+" height="128" width="128"> </label>
+				</div>
+				<div class = 'app'> 
+					<input type="checkbox" name="apps" id = 'Lin' value = 'Line'/>
+					<label for="Lin"><img src="app-icons/128px-Line-icon.png" alt="Line" height="128" width="128"> </label>
+				</div>
+				<div class = 'app'> 
+					<input type="checkbox" name="apps" id = 'Sec' value = 'Secret'/>
+					<label for="Sec"><img src="app-icons/128px-YikYak-icon.png" alt="Secret" height="128" width="128"> </label>
+			    </div>
+
+				<input type="button" onclick="hideQ2()" value = 'NEXT'/>
+			
+		</div>
+
+
+
+		<div class="form-style-6" id = 'Q3'> 
+				
+				<h1>How long would you say you're on your phone every day?</h1>	
+
+				<div class = 'sliderContainer'>
+
+				<h4 class = 'left'>15min or less</h4>
+				<h4 class = 'right'>5hours or more</h4>
+
+				<input type="range" class = 'slider' name="timeOnPhone" id="timeOnPhone" value="50" min="0" max="100">
+				<input type="button" onclick="hideQ3()" value = 'NEXT'/>
+			
+				</div>
+			
+		</div>
+
+
+		<div class="form-style-6" id = 'Q4'> 
+
+				
+				<h1>How frequently do you post on social media? (Insta, FB, blog etc)</h1>
+				<div class = 'sliderContainer'>
+
+				<h4 class = 'left'>Once a week or less</h4>
+				<h4 class = 'right'>Sevral times a day</h4>
+
+				<input type="range" class = 'slider' name="postFreq" id="postFreq" value="50" min="0" max="100">
+				<input type="button" onclick="hideQ4()" value = 'NEXT'/>
+			
+				</div>
+			
+
+		</div>
+
+
+
+		<div class="form-style-6" id = 'Q5'> 
+
+				
+				<h1>How bothered are you with these notifications on your phone?</h1>
+					<img src="notifications.jpg" id = 'notificPic' alt='notifications'>
+
+				<div class = 'sliderContainer'>
+
+					<h4 class = 'left'>Couldn't care less</h4>
+					<h4 class = 'right'>This stresses me out!</h4>
+
+					<input type="range" class = 'slider' name="notific" id="notific" value="50" min="0" max="100">
+					<input type="button" onclick="hideQ5()" value = 'NEXT'/>
+			
+				</div>
+			 
+		</div>
+
+
+		<div class="form-style-6" id = 'Q6'> 
+			
+				<h1>In one sentence - tell us some story or some fun fact or some issue you have, related to your experience with social life</h1>
+				
+				<textarea name="open Q" placeholder="Type here.."></textarea>
+				<input type="button" onclick="hideQ6()" value = 'NEXT'/>
+
+			
+		</div>
+
+
+
+		<div class="form-style-6" id = 'Q7'> 
+
+			<h1>Strike you signature selfie pose/face</h1> 
+
+           <!-- <div id="my_camera"></div> -->
+           <!-- <div id="results">Your captured image will appear here...</div>  -->
+
+            <!-- <form id="form" sclass="pure-form pure-form-stacked"> -->
+	              <!-- <fieldset> -->
+	                
+
+	                  <!--<style scoped>
+	                    .button-success {
+	                        background: rgb(202, 60, 60);
+	                        color:#ffffff;
+	                    }
+	                  </style>-->
+	                 
+	               <!--  <input type="button" id="sub" class="button-success pure-button" onClick="take_snapshot()"> -->
+	                <!-- <input type="button" value="Submit picture examination" id="sub" class="button-success pure-button" onClick="take_snapshot()"> -->
+	                
+	                <input type="button" id="sub" value="See Result" onClick="hideQ7()">
+	         
+	              <!-- </fieldset> -->
+            <!-- </form> -->
+
+           
+            
+			 
+		</div>
+			  
+		
+			<div class="form-style-6" id = 'seeResults'>
+
+				<div id = 'pageLeft'>
+					<h2 id="diagnoResults"></h2>
+					<div id="awkResault"></div>
+					<div id="selfResault"></div>
+					<div id = 'SocilResault'></div>
+					<div id = 'notiOCDResault'></div>				
+				</div>
+
+				<div id = 'pageRight'> 
+					<h5>And here is your prescription>></h5>
+					<div id = 'cure'></div>
+				</div>
+
+				<input type="button" id="homebtn" value="Back to Home" onClick="location.href='index.html'">
+
+			</div>
+
+	</body>
+</html>
